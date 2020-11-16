@@ -1,6 +1,7 @@
 package com.angelikafonteles.webservice.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,4 +19,8 @@ public class UserService {
 		return repo.findAll();
 	}
 
+	public User findById(Long id) {
+		Optional<User> obj = repo.findById(id);
+		return obj.get();
+	}
 }
